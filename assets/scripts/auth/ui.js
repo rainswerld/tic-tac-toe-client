@@ -5,8 +5,8 @@ const store = require('../store')
 const signUpSuccess = function (response) {
   $('#message').text('Sign Up Successful')
   $('form').trigger('reset')
-  $('#authenticated').show()
-  $('#unauthenticated').hide()
+  // $('#authenticated').show()
+  // $('#unauthenticated').hide()
 }
 
 const signUpFailed = function (error) {
@@ -37,8 +37,8 @@ const changePwFailed = function (error) {
 
 const signOutSuccess = function () {
   $('#message').text('You signed out')
-  $('#authenticated').hide()
-  $('#unauthenticated').show()
+  // $('#authenticated').hide()
+  // $('#unauthenticated').show()
 }
 
 const signOutFailed = function (error) {
