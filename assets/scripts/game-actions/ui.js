@@ -6,8 +6,9 @@ const createGameSuccess = function (response) {
   $('#message').text('You created a game')
 
   const oneGame = (`
-    <h3>${response.game.cells}<h3>
-    <h4>${response.game._id}<h4>
+    <h3>${response.game.cells}</h3>
+    <h4>${response.game.over}</h4>
+    <h4>${response.game.owner}</h4>
     `)
   $('#content').html(oneGame)
 }
