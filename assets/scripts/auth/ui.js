@@ -26,6 +26,7 @@ const signInFailed = function (error) {
 
 const changePwSuccess = function () {
   $('#message').text('Changed password!')
+  $('form').trigger('reset')
 }
 
 const changePwFailed = function (error) {
