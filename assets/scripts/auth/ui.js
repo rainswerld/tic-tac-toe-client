@@ -34,11 +34,22 @@ const changePwFailed = function (error) {
   $('#message').text('Failed to change password!')
 }
 
+const signOutSuccess = function () {
+  $('#message').text('You signed out')
+}
+
+const signOutFailed = function (error) {
+  console.log(error)
+  $('#message').text('Sign out failed')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailed,
   signInSuccess,
   signInFailed,
   changePwSuccess,
-  changePwFailed
+  changePwFailed,
+  signOutSuccess,
+  signOutFailed
 }
