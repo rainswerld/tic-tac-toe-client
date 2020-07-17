@@ -18,7 +18,7 @@ const createGame = function (formData) {
 const boardUpdate = function (formData) {
   console.log(formData)
   return $.ajax({
-    url: config.apiUrl + '/games/' + formData.game._id,
+    url: config.apiUrl + '/games/' + formData,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
