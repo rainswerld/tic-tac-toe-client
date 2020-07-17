@@ -14,13 +14,13 @@ const onCreateGame = function () {
 }
 
 const onBoardUpdate = function (event) {
-  console.log('i am here')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
+  // console.log(formData)
   api.boardUpdate(formData)
-    .then(console.log(formData.game.call.index[0]))
-    .catch(console.log('this failed'))
+    .then(ui.boardUpdateSuccess)
+    .catch(ui.boardUpdateFailed)
 }
 
 module.exports = {
