@@ -16,5 +16,5 @@ $(() => {
 
   // Game listeners
   $('#create-game').on('submit', gameActions.onCreateGame)
-  $('#test').on('submit', gameActions.onBoardUpdate)
+  $('#box-one').on('click', gameActions.onBoardUpdate)
 })
