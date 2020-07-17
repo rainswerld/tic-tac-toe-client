@@ -16,6 +16,7 @@ const createGame = function (formData) {
 }
 
 const boardUpdate = function (formData) {
+  console.log(formData)
   return $.ajax({
     url: config.apiUrl + '/games/' + formData.game._id,
     method: 'PATCH',
@@ -26,7 +27,7 @@ const boardUpdate = function (formData) {
       game: {
         cell: {
           index: 0,
-          value: 'X'
+          value: 'x'
         },
         over: false
       }
