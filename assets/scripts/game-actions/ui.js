@@ -21,7 +21,8 @@ const createGameFailed = function (response) {
 
 const boardUpdateSuccess = function (response) {
   console.log(response.game)
-  $('#box-one').text(response.game.cells[0])
+  // want this to eventually be any box that's clicked on gets updated
+  // $('#box-one').text(response.game.cells[0])
 }
 
 const boardUpdateFailed = function (error) {
