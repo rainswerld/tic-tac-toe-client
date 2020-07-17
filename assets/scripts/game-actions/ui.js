@@ -20,7 +20,8 @@ const createGameFailed = function (response) {
 }
 
 const boardUpdateSuccess = function (response) {
-  console.log(response)
+  console.log(response.game)
+  $('#box-one').text(response.game.cells[0])
 }
 
 const boardUpdateFailed = function (error) {
