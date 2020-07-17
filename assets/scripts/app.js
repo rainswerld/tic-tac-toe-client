@@ -17,4 +17,12 @@ $(() => {
   // Game listeners
   $('#create-game').on('submit', gameActions.onCreateGame)
   $('#box-one').on('click', gameActions.onBoardUpdate)
+  $('#box-two').on('click', gameActions.onBoardUpdate)
+  $('#box-three').on('click', gameActions.onBoardUpdate)
+  $('#box-four').on('click', gameActions.onBoardUpdate)
+  $('#box-five').on('click', gameActions.onBoardUpdate)
+  $('#box-six').on('click', gameActions.onBoardUpdate)
+  $('#box-seven').on('click', gameActions.onBoardUpdate)
+  $('#box-eight').on('click', gameActions.onBoardUpdate)
+  $('#box-nine').on('click', gameActions.onBoardUpdate)
 })
