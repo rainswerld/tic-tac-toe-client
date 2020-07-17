@@ -6,6 +6,8 @@ const api = require('./api.js')
 
 const ui = require('./ui.js')
 
+const store = require('../store.js')
+
 const onCreateGame = function () {
   event.preventDefault()
   api.createGame()
@@ -15,8 +17,9 @@ const onCreateGame = function () {
 
 const onBoardUpdate = function (event) {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+  // formData needs to equal the ID of the game
+  console.log(store.game._id)
+  const formData = store.game._id
   // console.log(formData)
   api.boardUpdate(formData)
     .then(ui.boardUpdateSuccess)
