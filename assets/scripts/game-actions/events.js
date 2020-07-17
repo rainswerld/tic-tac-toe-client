@@ -18,12 +18,13 @@ const onCreateGame = function () {
 const onBoardUpdate = function (event) {
   event.preventDefault()
   // formData needs to equal the ID of the game
-  console.log(store.game._id)
-  const formData = store.game._id
-  // console.log(formData)
-  api.boardUpdate(formData)
-    .then(ui.boardUpdateSuccess)
-    .catch(ui.boardUpdateFailed)
+  console.log(event)
+  // console.log(store.game._id)
+  // const formData = store.game._id
+  // // console.log(formData)
+  // api.boardUpdate(formData)
+  //   .then(ui.boardUpdateSuccess)
+  //   .catch(ui.boardUpdateFailed)
 }
 
 module.exports = {
