@@ -15,7 +15,26 @@ const createGame = function (formData) {
   })
 }
 
+const boardUpdate = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + formData.game._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: 0,
+          value: 'X'
+        },
+        over: false
+      }
+    }
+  })
+}
 
 module.exports = {
-  createGame
+  createGame,
+  boardUpdate
 }
