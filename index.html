@@ -12,7 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <div class="container col-12">
       <h1>TIC TAC TOE</h1>
+    </div>
+
 
       <div id="unauthenticated">
 
@@ -31,6 +34,8 @@
 
       </div>
 
+
+
       <div id="authenticated">
 
         <form id="change-pw">
@@ -44,9 +49,9 @@
         </form>
 
         <form id="create-game">
-          <button type="submit">Create Game</button>
+          <button type="submit">Start Game</button>
         </form>
-
+      <div class="container">
         <div class="row">
           <div class="col-4 box" id="box-one" data-cell-index='0'>
             <!--<form id="test">
@@ -64,7 +69,12 @@
             <div class="col-4 box" id="box-nine" data-cell-index='8'></div>
         </div>
 
+
+      <form id="new-game">
+          <button type="submit">New Game</button>
+        </form>
       </div>
+    </div>
 
     <p id="message"></p>
     <p id="content"></p>
