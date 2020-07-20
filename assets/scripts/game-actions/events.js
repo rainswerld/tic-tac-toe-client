@@ -1,12 +1,26 @@
 'use strict'
 
-const getFormFields = require('../../../lib/get-form-fields.js')
+// const getFormFields = require('../../../lib/get-form-fields.js')
 
 const api = require('./api.js')
 
 const ui = require('./ui.js')
 
 const store = require('../store.js')
+
+let turn = 0
+let player
+
+const changeTurn = function () {
+  player = 'X'
+  turn++
+  if (turn % 2 == 0) {
+    player = 'O'
+  } else {
+    player = 'X'
+  }
+}
+
 
 const onCreateGame = function () {
   event.preventDefault()
@@ -16,18 +30,22 @@ const onCreateGame = function () {
 }
 
 const onBoardUpdate = function (event) {
+  changeTurn()
   event.preventDefault()
-  // formData needs to equal the ID of the game
-  console.log(event)
-  // console.log(store.game._id)
-  // const formData = store.game._id
-  // // console.log(formData)
-  // api.boardUpdate(formData)
-  //   .then(ui.boardUpdateSuccess)
-  //   .catch(ui.boardUpdateFailed)
+  store.cell = event.target
+  const index = $(event.target).data('cell-index')
+  api.boardUpdate(index, player)
+    .then(ui.boardUpdateSuccess)
+    .catch(ui.boardUpdateFailed)
+}
+
+const onBoardRestart = function (event) {
+  event.preventDefault()
+  ui.boardRestart(event)
 }
 
 module.exports = {
   onCreateGame,
-  onBoardUpdate
+  onBoardUpdate,
+  onBoardRestart
 }

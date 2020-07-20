@@ -47,6 +47,8 @@ const signOutFailed = function (error) {
   $('#message').text('Sign out failed')
 }
 
+
+
 module.exports = {
   signUpSuccess,
   signUpFailed,

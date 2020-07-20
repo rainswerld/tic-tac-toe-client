@@ -7,6 +7,8 @@ const gameActions = require('./game-actions/events.js')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
+const board = ['', '', '', '', '', '', '', '', '']
+
 $(() => {
   // your JS code goes here
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -17,12 +19,14 @@ $(() => {
   // Game listeners
   $('#create-game').on('submit', gameActions.onCreateGame)
   $('#box-one').on('click', gameActions.onBoardUpdate)
-  $('#box-two').on('click', gameActions.onBoardUpdate)
-  $('#box-three').on('click', gameActions.onBoardUpdate)
-  $('#box-four').on('click', gameActions.onBoardUpdate)
-  $('#box-five').on('click', gameActions.onBoardUpdate)
-  $('#box-six').on('click', gameActions.onBoardUpdate)
-  $('#box-seven').on('click', gameActions.onBoardUpdate)
-  $('#box-eight').on('click', gameActions.onBoardUpdate)
-  $('#box-nine').on('click', gameActions.onBoardUpdate)
+  $('.box').on('click', gameActions.onBoardUpdate)
+  $('#new-game').on('click', gameActions.onBoardRestart)
+  // $('#box-two').on('click', gameActions.onBoardUpdate)
+  // $('#box-three').on('click', gameActions.onBoardUpdate)
+  // $('#box-four').on('click', gameActions.onBoardUpdate)
+  // $('#box-five').on('click', gameActions.onBoardUpdate)
+  // $('#box-six').on('click', gameActions.onBoardUpdate)
+  // $('#box-seven').on('click', gameActions.onBoardUpdate)
+  // $('#box-eight').on('click', gameActions.onBoardUpdate)
+  // $('#box-nine').on('click', gameActions.onBoardUpdate)
 })

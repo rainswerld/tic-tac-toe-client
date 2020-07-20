@@ -15,10 +15,9 @@ const createGame = function (formData) {
   })
 }
 
-const boardUpdate = function (formData) {
-  console.log(formData)
+const boardUpdate = function (index, player) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + formData,
+    url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -26,8 +25,8 @@ const boardUpdate = function (formData) {
     data: {
       game: {
         cell: {
-          index: 0,
-          value: 'x'
+          index: index,
+          value: player
         },
         over: false
       }
