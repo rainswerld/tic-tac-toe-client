@@ -9,13 +9,13 @@ const ui = require('./ui.js')
 const store = require('../store.js')
 
 let turn = 1
-let player = 'X'
+store.player = 'X'
 
 const changeTurn = function () {
   if (turn % 2 === 1) {
-    player = 'X'
+    store.player = 'X'
   } else {
-    player = 'O'
+    store.player = 'O'
   }
   turn++
 }
@@ -31,11 +31,10 @@ const onBoardUpdate = function (event) {
   event.preventDefault()
   store.cell = event.target
   const index = $(event.target).data('cell-index')
-  api.boardUpdate(index, player)
+  changeTurn()
+  api.boardUpdate(index, store.player)
     .then(ui.boardUpdateSuccess)
     .catch(ui.boardUpdateFailed)
-  store.player = player
-  changeTurn()
 }
 
 const onBoardRestart = function (event) {

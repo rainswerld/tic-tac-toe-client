@@ -18,6 +18,7 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#authenticated').show()
   $('#unauthenticated').hide()
+  $('#new-game').hide()
 }
 
 const signInFailed = function (error) {

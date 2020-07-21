@@ -52,6 +52,7 @@ const checkForWinner = function (response) {
   else if ((response[6] || response[4] || response[2] !== "") && (response[6] == response[4]) && (response[4] == response[2])) {
     $('#message').text(store.player + ' has won the game')
   }
+  $('#new-game').show()
 }
 
 const boardUpdateSuccess = function (response) {
