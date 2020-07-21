@@ -45,8 +45,28 @@ const createNewGame = function (formData) {
   })
 }
 
+const gameOver = function (game, index, player) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + game._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: index,
+          value: player
+        },
+        over: true
+      }
+    }
+  })
+}
+
 module.exports = {
   createGame,
   boardUpdate,
-  createNewGame
+  createNewGame,
+  gameOver
 }

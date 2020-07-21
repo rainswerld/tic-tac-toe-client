@@ -25,13 +25,13 @@ const onCreateGame = function () {
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailed)
-  console.log('this is the create game ', store.game.cells)
-  const index = $(event.target).data('cell-index')
-  if (store.game.cells[index] !== '') {
-    api.createNewGame()
-      .then(ui.createNewGameSuccess)
-      .catch(ui.createNewGameFailed)
-  }
+  // console.log('this is the create game ', store.game.cells)
+  // const index = $(event.target).data('cell-index')
+  // if (store.game.cells[index] !== '') {
+  //   api.createNewGame()
+  //     .then(ui.createNewGameSuccess)
+  //     .catch(ui.createNewGameFailed)
+  // }
   // loop over game.cells and popular divs with corresponding ID with value of the cell as the text
   // console.log('this is the value of store.game ', store.game)
   // const cells = store.game.cells
@@ -43,8 +43,6 @@ const onBoardUpdate = function (event) {
   store.cell = event.target
   const index = $(event.target).data('cell-index')
 
-  console.log('this is the value of store.game in update ', store.game)
-  console.log('this is the value in the if statement ', store.game.cells[index])
   if (store.game.cells[index] === '') {
     changeTurn()
     api.boardUpdate(index, store.player)
