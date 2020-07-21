@@ -8,19 +8,17 @@ const ui = require('./ui.js')
 
 const store = require('../store.js')
 
-let turn = 0
-let player
+let turn = 1
+let player = 'X'
 
 const changeTurn = function () {
-  player = 'X'
-  turn++
-  if (turn % 2 == 0) {
-    player = 'O'
-  } else {
+  if (turn % 2 === 1) {
     player = 'X'
+  } else {
+    player = 'O'
   }
+  turn++
 }
-
 
 const onCreateGame = function () {
   event.preventDefault()
@@ -29,23 +27,28 @@ const onCreateGame = function () {
     .catch(ui.createGameFailed)
 }
 
+
+
 const onBoardUpdate = function (event) {
-  changeTurn()
   event.preventDefault()
   store.cell = event.target
   const index = $(event.target).data('cell-index')
   api.boardUpdate(index, player)
     .then(ui.boardUpdateSuccess)
     .catch(ui.boardUpdateFailed)
+  changeTurn()
 }
 
 const onBoardRestart = function (event) {
   event.preventDefault()
-  ui.boardRestart(event)
+  api.createNewGame()
+    .then(ui.createNewGameSuccess)
+    .catch(ui.createNewGameFailed)
 }
 
 module.exports = {
   onCreateGame,
   onBoardUpdate,
-  onBoardRestart
+  onBoardRestart,
+  changeTurn
 }

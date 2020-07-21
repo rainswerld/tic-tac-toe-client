@@ -26,14 +26,20 @@ const createGameFailed = function (response) {
 const boardUpdateSuccess = function (response) {
   // want this to eventually be any box that's clicked on gets updated
   $(store.cell).text(response.game.cells[store.cell.dataset.cellIndex])
+
+  // add a forEach loop that checked the full array with conditional logic that says if this condition is met, it's a win, if this condition is met X/O loses if this confition is met, it's a tie
 }
 
-const boardUpdateFailed = function () {
-  $('#message').text('failed to update game')
+const boardUpdateFailed = function (error) {
+  console.log(error)
 }
 
-const boardRestart = function (response) {
-  $(store.cell).trigger('reset')
+const createNewGameSuccess = function (response) {
+  $('.box').text('')
+}
+
+const createNewGameFailed = function (error) {
+  console.log(error)
 }
 
 module.exports = {
@@ -41,5 +47,6 @@ module.exports = {
   createGameFailed,
   boardUpdateSuccess,
   boardUpdateFailed,
-  boardRestart
+  createNewGameSuccess,
+  createNewGameFailed
 }

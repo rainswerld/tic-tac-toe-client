@@ -34,7 +34,19 @@ const boardUpdate = function (index, player) {
   })
 }
 
+const createNewGame = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+    data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createGame,
-  boardUpdate
+  boardUpdate,
+  createNewGame
 }
