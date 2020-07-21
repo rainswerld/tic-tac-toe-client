@@ -27,8 +27,6 @@ const onCreateGame = function () {
     .catch(ui.createGameFailed)
 }
 
-
-
 const onBoardUpdate = function (event) {
   event.preventDefault()
   store.cell = event.target
@@ -36,6 +34,7 @@ const onBoardUpdate = function (event) {
   api.boardUpdate(index, player)
     .then(ui.boardUpdateSuccess)
     .catch(ui.boardUpdateFailed)
+  store.player = player
   changeTurn()
 }
 
