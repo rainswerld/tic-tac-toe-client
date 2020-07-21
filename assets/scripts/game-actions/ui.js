@@ -16,16 +16,15 @@ const createGameSuccess = function (response) {
   //   <h4>${response.game._id}</h4>
   //   `)
   // $('#content').html(oneGame)
+  console.log('this is the store.game in game success ', store.game)
 }
 
 const createGameFailed = function (response) {
   $('#message').text('You failed to create a game')
   store.game = response.game
-  // console.log(store.game)
 }
 
 const checkForWinner = function (response) {
-  // console.log('this is the winner response: ', response)
   // row 1
   if ((response[0] || response[1] || response[2] !== "") && (response[0] == response[1]) && (response[1] == response[2])) {
     $('#message').text(store.player + ' has won the game')
@@ -52,11 +51,18 @@ const checkForWinner = function (response) {
   else if ((response[6] || response[4] || response[2] !== "") && (response[6] == response[4]) && (response[4] == response[2])) {
     $('#message').text(store.player + ' has won the game')
   }
+  // else if (response all of them are filled, than it's a tie)
   $('#new-game').show()
 }
 
 const boardUpdateSuccess = function (response) {
-  $(store.cell).text(response.game.cells[store.cell.dataset.cellIndex])
+  const index = store.cell.dataset.cellIndex
+  store.game = response.game
+  console.log('this is the response.game.cells on update ', response.game.cells)
+
+  console.log('this is what store.game is in baordUpdateSuccess: ', store.game)
+  // if response.game.over = true, turn off all event listeners except on new game button
+  $(store.cell).text(store.game.cells[index])
   $('#message').text(store.player + ' turn ended')
   checkForWinner(response.game.cells)
 }
@@ -68,6 +74,7 @@ const boardUpdateFailed = function (error) {
 const createNewGameSuccess = function (response) {
   $('.box').text('')
   $('#message').text('')
+  checkForWinner(response.game.cells)
   store.player = 'X'
 }
 
