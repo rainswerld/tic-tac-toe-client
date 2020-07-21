@@ -68,6 +68,7 @@ const boardUpdateFailed = function (error) {
 const createNewGameSuccess = function (response) {
   $('.box').text('')
   $('#message').text('')
+  store.player = 'X'
 }
 
 const createNewGameFailed = function (error) {
