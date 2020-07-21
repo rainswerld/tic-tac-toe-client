@@ -57,7 +57,7 @@ const checkForWinner = function (response) {
 
 const boardUpdateSuccess = function (response) {
   $(store.cell).text(response.game.cells[store.cell.dataset.cellIndex])
-  console.log(store.player)
+  $('#message').text(store.player + ' turn ended')
   checkForWinner(response.game.cells)
 }
 
