@@ -35,7 +35,10 @@ const onBoardUpdate = function (event) {
   api.boardUpdate(index, store.player)
     .then(ui.boardUpdateSuccess)
     .catch(ui.boardUpdateFailed)
-  $(event.target).off('click', onBoardUpdate)
+
+  // if (store.cell !== '') {
+  //   $(event.target).off('click', onBoardUpdate)
+  // }
 }
 
 const onBoardRestart = function (event) {
@@ -43,6 +46,7 @@ const onBoardRestart = function (event) {
   api.createNewGame()
     .then(ui.createNewGameSuccess)
     .catch(ui.createNewGameFailed)
+  // $(event.target).on('click', onBoardUpdate)
 }
 
 module.exports = {
