@@ -5,8 +5,6 @@ const store = require('../store')
 const signUpSuccess = function (response) {
   $('#message').text('Sign Up Successful')
   $('form').trigger('reset')
-  $('#authenticated').show()
-  $('#unauthenticated').hide()
 }
 
 const signUpFailed = function (error) {
@@ -18,6 +16,9 @@ const signInSuccess = function (response) {
   $('#message').text('Signed In')
   $('form').trigger('reset')
   store.user = response.user
+  $('#authenticated').show()
+  $('#unauthenticated').hide()
+  $('#new-game').hide()
 }
 
 const signInFailed = function (error) {
@@ -39,12 +40,15 @@ const signOutSuccess = function () {
   $('#message').text('You signed out')
   $('#authenticated').hide()
   $('#unauthenticated').show()
+  $('#content').hide()
 }
 
 const signOutFailed = function (error) {
   console.log(error)
   $('#message').text('Sign out failed')
 }
+
+
 
 module.exports = {
   signUpSuccess,

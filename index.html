@@ -12,7 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <div class="container col-12">
       <h1>TIC TAC TOE</h1>
+    </div>
+
 
       <div id="unauthenticated">
 
@@ -23,15 +26,17 @@
           <button type="submit">Sign Up</button>
         </form>
 
-      </div>
-
-      <div id="authenticated">
-
         <form id="sign-in">
           <input name="credentials[email]" type="text" placeholder="email" />
           <input name="credentials[password]" type="password" placeholder="password" />
           <button type="submit">Sign In</button>
         </form>
+
+      </div>
+
+
+
+      <div id="authenticated">
 
         <form id="change-pw">
           <input name="passwords[old]" type="password" placeholder="old password" />
@@ -43,9 +48,27 @@
           <button type="submit">Sign Out</button>
         </form>
 
+        <form id="create-game">
+          <button type="submit">New Game</button>
+        </form>
+      <div class="container">
+          <div class="winning-message"></div>
+        <div class="row">
+            <div class="col-4 box" id="0" data-cell-index='0'></div>
+            <div class="col-4 box" id="1" data-cell-index='1'></div>
+            <div class="col-4 box" id="2" data-cell-index='2'></div>
+            <div class="col-4 box" id="3" data-cell-index='3'></div>
+            <div class="col-4 box" id="4" data-cell-index='4'></div>
+            <div class="col-4 box" id="5" data-cell-index='5'></div>
+            <div class="col-4 box" id="6" data-cell-index='6'></div>
+            <div class="col-4 box" id="7" data-cell-index='7'></div>
+            <div class="col-4 box" id="8" data-cell-index='8'></div>
+        </div>
+
       </div>
+    </div>
 
     <p id="message"></p>
-
+    <p id="content"></p>
     </body>
 </html>

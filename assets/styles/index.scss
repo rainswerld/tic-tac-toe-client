@@ -3,3 +3,19 @@
 #authenticated {
   display: none;
 }
+
+h1 {
+  text-align: center;
+}
+
+.box {
+  border: 1px solid #988198;
+  height: 10rem;
+  width: 10rem;
+  text-align: center;
+  font-size: 30px;
+
+  &:hover {
+    background-color: #B1C856;
+  }
+}
