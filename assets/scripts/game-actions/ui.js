@@ -10,6 +10,8 @@ const api = require('./api')
 const createGameSuccess = function (response) {
   $('#message').text('You created a game')
   store.game = response.game
+  $('.box').text('')
+  $('.box').show()
   // const oneGame = (`
   //   <h3>${response.game.cells}</h3>
   //   <h4>${response.game.over}</h4>
@@ -26,7 +28,7 @@ const createGameFailed = function (response) {
 const gameOverSuccess = function (response) {
   const player = store.player
   $('.box').hide()
-  $('.winning-message').text('congrats! ' + player + ' wins the game!')
+  $('#message').text('congrats! ' + player + ' wins the game!')
   console.log('this is the game over response ', response.game.over)
 }
 
