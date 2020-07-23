@@ -52,6 +52,13 @@ const onBoardUpdate = function (event) {
     $('#messsage').text('invalid move')
   }
 }
+
+const onShowGames = function (event) {
+  event.preventDefault()
+  api.showGames()
+    .then(ui.showGamesSuccess)
+    .catch(ui.showGamesFailure)
+}
 //
 // const onBoardRestart = function (event) {
 //   event.preventDefault()
@@ -65,5 +72,6 @@ module.exports = {
   onCreateGame,
   onBoardUpdate,
   // onBoardRestart,
-  changeTurn
+  changeTurn,
+  onShowGames
 }

@@ -64,9 +64,20 @@ const gameOver = function (game, index, player) {
   })
 }
 
+const showGames = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + '?over=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createGame,
   boardUpdate,
   createNewGame,
-  gameOver
+  gameOver,
+  showGames
 }
