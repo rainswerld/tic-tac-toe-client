@@ -33,7 +33,7 @@ My method for problem solving broken down was:
 2.  If I still had a problem, I would seek the advice from engineers that knew more than me
 3.  If I still had a problem, I would try and learn more about the particular issue I was dealing with (i.e. If my AJAX request wasn't behaving like I wanted meant that I needed to go learn more about AJAX requests)
 
-Often times I would get to the second step, but before sending my question I would solve my own problem simply by being forced to put my problem into words another engineer could understand. 
+Often times I would get to the second step, but before sending my question I would solve my own problem simply by being forced to put my problem into words another engineer could understand.
 
 
 ### User Stories
@@ -64,6 +64,6 @@ Additionally a lot of the menus and messages aren't stylized yet. That is someth
 ## Wireframes
 
 Check out my wireframes!
-[Wireframe 1](https://imgur.com/IOs2bOF)
-[Wireframe 2](https://imgur.com/hL2TE0Y)
-[Wireframe 3](https://imgur.com/pPsVha3)
+- [Wireframe 1](https://imgur.com/IOs2bOF)
+- [Wireframe 2](https://imgur.com/hL2TE0Y)
+- [Wireframe 3](https://imgur.com/pPsVha3)
