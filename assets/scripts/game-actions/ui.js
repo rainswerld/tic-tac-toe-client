@@ -3,21 +3,12 @@
 const store = require('../store')
 
 const api = require('./api')
-//
-// const gameEvents = require('./events.js')
-
 
 const createGameSuccess = function (response) {
   $('#message').text('You created a game')
   store.game = response.game
   $('.box').text('')
   $('.box').show()
-  // const oneGame = (`
-  //   <h3>${response.game.cells}</h3>
-  //   <h4>${response.game.over}</h4>
-  //   <h4>${response.game._id}</h4>
-  //   `)
-  // $('#content').html(oneGame)
 }
 
 const createGameFailed = function (response) {
@@ -30,9 +21,20 @@ const gameOverSuccess = function (response) {
   $('.box').hide()
   $('#message').text('congrats! ' + player + ' wins the game!')
   console.log('this is the game over response ', response.game.over)
+  // show how many games are gameOver
+  // function that makes game over increase (an interator)
 }
 
 const gameOverFailure = function (error) {
+  console.log(error)
+}
+
+const showGamesSuccess = function (response) {
+  console.log(response.games.length)
+  $('.score-board').text('Games played: ' + response.games.length)
+}
+
+const showGamesFailure = function (error) {
   console.log(error)
 }
 
@@ -98,23 +100,13 @@ const boardUpdateFailed = function (error) {
   console.log(error)
 }
 
-// const createNewGameSuccess = function (response) {
-//   $('.box').text('')
-//   $('#message').text('')
-//   checkForWinner(response.game.cells)
-//   store.player = 'X'
-// }
-//
-// const createNewGameFailed = function (error) {
-//   console.log(error)
-// }
 
 module.exports = {
   createGameSuccess,
   createGameFailed,
   boardUpdateSuccess,
   boardUpdateFailed,
-  // createNewGameSuccess,
-  // createNewGameFailed,
-  checkForWinner
+  checkForWinner,
+  showGamesSuccess,
+  showGamesFailure
 }

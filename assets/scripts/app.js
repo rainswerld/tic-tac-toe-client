@@ -8,7 +8,7 @@ const gameActions = require('./game-actions/events.js')
 // require('./example')
 
 $(() => {
-  // your JS code goes here
+  // Auth events
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-pw').on('submit', authEvents.onChangePw)
@@ -18,12 +18,5 @@ $(() => {
   $('#create-game').on('submit', gameActions.onCreateGame)
   $('.box').on('click', gameActions.onBoardUpdate)
   $('#new-game').on('click', gameActions.onBoardRestart)
-  // $('#box-two').on('click', gameActions.onBoardUpdate)
-  // $('#box-three').on('click', gameActions.onBoardUpdate)
-  // $('#box-four').on('click', gameActions.onBoardUpdate)
-  // $('#box-five').on('click', gameActions.onBoardUpdate)
-  // $('#box-six').on('click', gameActions.onBoardUpdate)
-  // $('#box-seven').on('click', gameActions.onBoardUpdate)
-  // $('#box-eight').on('click', gameActions.onBoardUpdate)
-  // $('#box-nine').on('click', gameActions.onBoardUpdate)
+  $('.show-games').on('click', gameActions.onShowGames)
 })
