@@ -1,26 +1,42 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-image: url("https://wallpaperaccess.com/full/1719793.jpg")
+}
+
+
 #authenticated {
   display: none;
 }
 
 #unauthenticated {
-  border: 1px solid black;
   margin: 50px auto;
   padding: 20px auto;
   width: 50%;
 }
 
 #message {
+  color: white;
   text-align: center;
 }
 
+#content {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
 h1 {
+  color: white;
   text-align: center;
   margin: 40px;
 }
 
 .box {
+  color: white;
+  background-color: black;
   border: 1px solid #988198;
   height: 10rem;
   width: 10rem;
@@ -30,4 +46,8 @@ h1 {
   &:hover {
     background-color: #B1C856;
   }
+}
+
+#score-board {
+  color: white;
 }
