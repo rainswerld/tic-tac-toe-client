@@ -20,13 +20,15 @@ const gameOverSuccess = function (response) {
   const player = store.player
   $('.box').hide()
   $('#message').text('congrats! ' + player + ' wins the game!')
-  console.log('this is the game over response ', response.game.over)
-  // show how many games are gameOver
-  // function that makes game over increase (an interator)
 }
 
 const gameOverFailure = function (error) {
   console.log(error)
+}
+
+const gameOverTie = function (response) {
+  $('.box').hide()
+  $('#message').text('IT\'S A TIE!')
 }
 
 const showGamesSuccess = function (response) {
@@ -84,8 +86,12 @@ const checkForWinner = function (response) {
     api.gameOver(game, index, player)
       .then(gameOverSuccess)
       .catch(gameOverFailure)
+  } // else if (response all of them are filled, than it's a tie)
+  else if ((response[0] && response[1] && response[2] && response[3] && response[4] && response[5] && response[6] && response[7] && response[8]) !== "") {
+    api.gameOver(game, index, player)
+      .then(gameOverTie)
+      .catch(gameOverTieFailed)
   }
-  // else if (response all of them are filled, than it's a tie)
 }
 
 const boardUpdateSuccess = function (response) {
@@ -108,5 +114,6 @@ module.exports = {
   boardUpdateFailed,
   checkForWinner,
   showGamesSuccess,
-  showGamesFailure
+  showGamesFailure,
+  gameOverTie
 }
