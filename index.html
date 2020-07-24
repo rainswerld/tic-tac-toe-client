@@ -18,21 +18,26 @@
 
     <div class="winning-message"></div>
     <div class="score-board"></div>
-
+    <p id="message"></p>
+    <p id="content"></p>
 
       <div id="unauthenticated">
 
         <form id="sign-up">
-          <input name="credentials[email]" type="text" placeholder="email" />
-          <input name="credentials[password]" type="password" placeholder="password"/>
-          <input name="credentials[password_confirmation]" type="password" placeholder="confirm password"/>
+          <div class="form-group">
+          <input name="credentials[email]" class="form-control col-4-centered" type=text placeholder="username" />
+          <input name="credentials[password]" type="password" class="form-control" placeholder="password"/>
+          <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="confirm password"/>
           <button type="submit">Sign Up</button>
+        </div>
         </form>
 
         <form id="sign-in">
-          <input name="credentials[email]" type="text" placeholder="email" />
-          <input name="credentials[password]" type="password" placeholder="password" />
+          <div class="form-group">
+          <input name="credentials[email]" type="text" class="form-control" placeholder="email" />
+          <input name="credentials[password]" type="password" class="form-control" placeholder="password" />
           <button type="submit">Sign In</button>
+        </div>
         </form>
 
       </div>
@@ -72,7 +77,6 @@
       <button class="show-games">Show Games</button>
     </div>
 
-    <p id="message"></p>
-    <p id="content"></p>
+
     </body>
 </html>
