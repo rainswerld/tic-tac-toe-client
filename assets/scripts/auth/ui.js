@@ -19,6 +19,7 @@ const signInSuccess = function (response) {
   $('#authenticated').show()
   $('#unauthenticated').hide()
   $('#new-game').hide()
+  $('#board').hide()
 }
 
 const signInFailed = function (error) {

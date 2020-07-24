@@ -4,8 +4,20 @@
   display: none;
 }
 
+#unauthenticated {
+  border: 1px solid black;
+  margin: 50px auto;
+  padding: 20px auto;
+  width: 50%;
+}
+
+#message {
+  text-align: center;
+}
+
 h1 {
   text-align: center;
+  margin: 40px;
 }
 
 .box {
