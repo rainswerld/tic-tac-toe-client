@@ -5,10 +5,10 @@ const store = require('../store')
 const api = require('./api')
 
 const createGameSuccess = function (response) {
-  $('#message').text('You created a game')
-  store.game = response.game
   $('.box').text('')
   $('#board').show()
+  $('#message').text('You created a game')
+  store.game = response.game
 }
 
 const createGameFailed = function (response) {
@@ -29,6 +29,10 @@ const gameOverFailure = function (error) {
 const gameOverTie = function (response) {
   $('.box').hide()
   $('#message').text('IT\'S A TIE!')
+}
+
+const gameOverTieFailed = function (error) {
+  console.log(error)
 }
 
 const showGamesSuccess = function (response) {

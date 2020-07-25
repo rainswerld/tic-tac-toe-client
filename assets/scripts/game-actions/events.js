@@ -25,17 +25,6 @@ const onCreateGame = function () {
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailed)
-  // console.log('this is the create game ', store.game.cells)
-  // const index = $(event.target).data('cell-index')
-  // if (store.game.cells[index] !== '') {
-  //   api.createNewGame()
-  //     .then(ui.createNewGameSuccess)
-  //     .catch(ui.createNewGameFailed)
-  // }
-  // loop over game.cells and popular divs with corresponding ID with value of the cell as the text
-  // console.log('this is the value of store.game ', store.game)
-  // const cells = store.game.cells
-  // cells.forEach(element => console.log('this is the forEach', element))
 }
 
 const onBoardUpdate = function (event) {

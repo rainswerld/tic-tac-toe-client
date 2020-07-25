@@ -1,9 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
 body {
-  background-image: url("https://wallpaperaccess.com/full/1719793.jpg")
+  background-color: black;
 }
 
+.form-control {
+  margin: 10px auto;
+}
+
+#sign-in {
+  margin: 30px auto;
+}
 
 #authenticated {
   display: none;
@@ -29,6 +37,7 @@ p {
 }
 
 h1 {
+  font-family: Quicksand, sans serif;
   color: white;
   text-align: center;
   margin: 40px;
@@ -46,6 +55,10 @@ h1 {
   &:hover {
     background-color: #B1C856;
   }
+}
+
+input, textarea {
+  color: purple;
 }
 
 #score-board {
