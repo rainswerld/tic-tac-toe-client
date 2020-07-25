@@ -6,6 +6,7 @@ const api = require('./api')
 
 const createGameSuccess = function (response) {
   $('.box').text('')
+  $('.box').show()
   $('#board').show()
   $('#message').text('You created a game')
   $('.score-board').hide()
@@ -38,6 +39,7 @@ const gameOverTieFailed = function (error) {
 
 const showGamesSuccess = function (response) {
   console.log(response.games.length)
+  $('.score-board').show()
   $('.score-board').text('Games played: ' + response.games.length)
 }
 
