@@ -38,7 +38,8 @@ const onBoardUpdate = function (event) {
       .then(ui.boardUpdateSuccess)
       .catch(ui.boardUpdateFailed)
   } else {
-    $('#messsage').text('invalid move')
+    console.log('invalid move')
+    $('#message').text('you can\'t go there silly')
   }
 }
 

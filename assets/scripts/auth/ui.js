@@ -8,8 +8,9 @@ const signUpSuccess = function (response) {
 }
 
 const signUpFailed = function (error) {
+  $('#message').show()
   $('#message').text('Sign Up Failed')
-  console.log(error)
+  console.log('this is your error', error)
 }
 
 const signInSuccess = function (response) {
@@ -24,6 +25,7 @@ const signInSuccess = function (response) {
 
 const signInFailed = function (error) {
   console.log(error)
+  $('#message').show()
   $('#message').text('Failed to sign in')
 }
 
