@@ -8,7 +8,7 @@ const createGameSuccess = function (response) {
   $('.box').text('')
   $('.box').show()
   $('#board').show()
-  $('#message').text('You created a game')
+  $('#message').text('Let the games begin!')
   $('.score-board').hide()
   store.game = response.game
 }
