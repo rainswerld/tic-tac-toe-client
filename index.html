@@ -12,31 +12,31 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <div id="nav-bar">
       <div class="container col-12">
       <h1>TIC TAC TOE</h1>
     </div>
 
     <div class="winning-message"></div>
     <div class="score-board"></div>
-    <p id="message"></p>
-    <p id="content"></p>
+
 
       <div id="unauthenticated">
 
         <form id="sign-up">
           <div class="form-group">
-          <input name="credentials[email]" class="form-control col-4-centered" type=text placeholder="username" />
-          <input name="credentials[password]" type="password" class="form-control" placeholder="password"/>
-          <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="confirm password"/>
-          <button type="submit">Sign Up</button>
+          <input name="credentials[email]" class="form-control mx-auto" style="width:250px" type="text" placeholder="username" />
+          <input name="credentials[password]" type="password" class="form-control mx-auto" style="width:250px" placeholder="password"/>
+          <input name="credentials[password_confirmation]" type="password" class="form-control mx-auto" style="width:250px" placeholder="confirm password"/>
+          <button type="submit" class="form-control mx-auto" style="width:150px">Sign Up</button>
         </div>
         </form>
 
         <form id="sign-in">
           <div class="form-group">
-          <input name="credentials[email]" type="text" class="form-control" placeholder="email" />
-          <input name="credentials[password]" type="password" class="form-control" placeholder="password" />
-          <button type="submit">Sign In</button>
+          <input name="credentials[email]" type="text" class="form-control mx-auto" style="width:250px" placeholder="email" />
+          <input name="credentials[password]" type="password" class="form-control mx-auto" style="width:250px" placeholder="password" />
+          <button type="submit" class="form-control mx-auto" style="width:150px">Sign In</button>
         </div>
         </form>
 
@@ -47,18 +47,25 @@
       <div id="authenticated">
 
         <form id="change-pw">
-          <input name="passwords[old]" type="password" placeholder="old password" />
-          <input name="passwords[new]" type="password" placeholder="new password" />
-          <button type="submit">Change Password</button>
+          <input name="passwords[old]" type="password" class="form-control mx-auto" style="width:250px" placeholder="old password" />
+          <input name="passwords[new]" type="password" class="form-control mx-auto" style="width:250px" placeholder="new password" />
+          <button type="submit" class="form-control mx-auto" style="width:175px">Change Password</button>
         </form>
+
+        <button class="show-games form-control mx-auto" style="width:175px">Show Games</button>
 
         <form id="sign-out">
-          <button type="submit">Sign Out</button>
+          <button type="submit" class="form-control mx-auto" style="width:175px">Sign Out</button>
         </form>
 
+        <p id="message"></p>
+        <p id="content"></p>
+
         <form id="create-game">
-          <button type="submit">New Game</button>
+          <button type="submit" class="form-control mx-auto" style="width:175px">New Game</button>
         </form>
+
+
       <div class="container" id="board">
 
         <div class="row">
@@ -74,7 +81,7 @@
         </div>
 
       </div>
-      <button class="show-games">Show Games</button>
+
     </div>
 
 
