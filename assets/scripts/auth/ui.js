@@ -25,8 +25,7 @@ const signInSuccess = function (response) {
 
 const signInFailed = function (error) {
   console.log(error)
-  $('#message').show()
-  $('#message').text('Failed to sign in')
+  $('#fail-message').text('Failed to sign in')
 }
 
 const changePwSuccess = function () {
