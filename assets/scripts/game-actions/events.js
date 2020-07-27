@@ -22,6 +22,7 @@ const changeTurn = function () {
 
 const onCreateGame = function () {
   event.preventDefault()
+  store.player = 'X'
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailed)

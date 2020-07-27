@@ -11,6 +11,7 @@ const createGameSuccess = function (response) {
   $('#message').text('Let the games begin!')
   $('.score-board').hide()
   store.game = response.game
+  console.log('this is the value of player ', store.player)
 }
 
 const createGameFailed = function (response) {
