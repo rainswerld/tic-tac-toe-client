@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div class="container col-12">
+      <h1>TIC TAC TOE</h1>
+    </div>
+
+    <div class="winning-message"></div>
+
+      <div id="unauthenticated">
+
+        <form id="sign-up">
+          <div class="form-group">
+          <input name="credentials[email]" class="form-control mx-auto" style="width:250px" type="text" placeholder="username" />
+          <input name="credentials[password]" type="password" class="form-control mx-auto" style="width:250px" placeholder="password"/>
+          <input name="credentials[password_confirmation]" type="password" class="form-control mx-auto" style="width:250px" placeholder="confirm password"/>
+          <button type="submit" class="form-control mx-auto" style="width:150px">Sign Up</button>
+        </div>
+        </form>
+
+        <form id="sign-in">
+          <div class="form-group">
+          <input name="credentials[email]" type="text" class="form-control mx-auto" style="width:250px" placeholder="email" />
+          <input name="credentials[password]" type="password" class="form-control mx-auto" style="width:250px" placeholder="password" />
+          <button type="submit" class="form-control mx-auto" style="width:150px">Sign In</button>
+        </div>
+        </form>
+
+        <p id="sign-up-success"></p>
+        <p id="sign-out-success"></p>
+        <p id="fail-message"></p>
+
+      </div>
+
+      <div id="authenticated">
+
+        <form id="change-pw">
+          <input name="passwords[old]" type="password" class="form-control mx-auto" style="width:250px" placeholder="old password" />
+          <input name="passwords[new]" type="password" class="form-control mx-auto" style="width:250px" placeholder="new password" />
+          <button type="submit" class="form-control mx-auto" style="width:175px">Change Password</button>
+        </form>
+
+
+        <form id="sign-out">
+          <button type="submit" class="form-control mx-auto" style="width:175px">Sign Out</button>
+        </form>
+
+        <button class="show-games form-control mx-auto" style="width:175px">Show Games</button>
+        <p class="score-board"></p>
+        <p id="content"></p>
+
+        <form id="create-game">
+          <button type="submit" class="form-control mx-auto" style="width:175px">New Game</button>
+        </form>
+
+        <p id="message"></p>
+
+      <div class="container" id="board">
+
+        <div class="row">
+            <div class="col-4 box bottom-right" id="0" data-cell-index='0'></div>
+            <div class="col-4 box bottom-right" id="1" data-cell-index='1'></div>
+            <div class="col-4 box bottom" id="2" data-cell-index='2'></div>
+            <div class="col-4 box bottom-right" id="3" data-cell-index='3'></div>
+            <div class="col-4 box bottom-right" id="4" data-cell-index='4'></div>
+            <div class="col-4 box bottom" id="5" data-cell-index='5'></div>
+            <div class="col-4 box right" id="6" data-cell-index='6'></div>
+            <div class="col-4 box right" id="7" data-cell-index='7'></div>
+            <div class="col-4 box" id="8" data-cell-index='8'></div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    </body>
+</html>
