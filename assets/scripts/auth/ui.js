@@ -14,6 +14,7 @@ const signUpFailed = function (error) {
 }
 
 const signInSuccess = function (response) {
+  $('#sign-up-success').hide()
   $('#message').text('Signed In! Now create a \'New Game\'')
   $('form').trigger('reset')
   store.user = response.user
