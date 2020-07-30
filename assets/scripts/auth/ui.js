@@ -3,7 +3,7 @@
 const store = require('../store')
 
 const signUpSuccess = function (response) {
-  $('#message').text('Sign Up Successful')
+  $('#sign-up-success').text('Sign Up Successful! Now sign in')
   $('form').trigger('reset')
 }
 
@@ -14,7 +14,7 @@ const signUpFailed = function (error) {
 }
 
 const signInSuccess = function (response) {
-  $('#message').text('Signed In')
+  $('#message').text('Signed In! Now create a \'New Game\'')
   $('form').trigger('reset')
   store.user = response.user
   $('#authenticated').show()
@@ -39,7 +39,7 @@ const changePwFailed = function (error) {
 }
 
 const signOutSuccess = function () {
-  $('#message').text('You signed out')
+  $('#sign-out-success').text('You signed out! Sign in if you want to play again')
   $('#authenticated').hide()
   $('#unauthenticated').show()
   $('#content').hide()
