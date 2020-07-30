@@ -12,16 +12,19 @@ let turn = 1
 store.player = 'X'
 
 const changeTurn = function () {
+  console.log('this is what turn is when it enters the function ', turn)
   if (turn % 2 === 1) {
     store.player = 'X'
   } else {
     store.player = 'O'
   }
   turn++
+  console.log('this is what turn is when it excits the function', turn)
 }
 
 const onCreateGame = function () {
   event.preventDefault()
+  turn = 1
   store.player = 'X'
   api.createGame()
     .then(ui.createGameSuccess)
